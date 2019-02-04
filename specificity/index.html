@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet-1.css">
+	<link rel="stylesheet" type="text/css" href="stylesheet-2.css">
+
+<meta charset="UTF-8">
+
+</head>
+<body>
+
+
+
+<div class="jumbotron text-center" id = 'banner'>
+  <h1>CSS specificity </h1>
+</div>
+
+
+  <div class ="row"id = 'first'>
+    <div class="col-md-7 col-sm-7" id='what'>
+    	<div id ='wh'>    	
+    		<h3 >CSS specificity คืออะไร</h3>
+    	</div>
+
+    	<p>
+    			css specificity เป็น css rules ที่ html จะเลือกใช้ style ลงใน element นั้นๆ 
+    	</p>
+
+    </div>
+
+     <div class ="row"id = 'first'>
+    <div class="col-md-7 col-sm-7" id='what'>
+    	<div id ='wh'>    	
+    		<h3 >code ใน stylesheet </h3>
+    	</div>
+
+<section  class="code">
+				<pre>
+/* stylesheet-1.css */
+			
+ul li {
+	display: inline-block;
+	list-style: none;
+	padding: 10px;
+
+}
+
+ul li a {
+	text-decoration: none;
+	color: red;
+}
+
+ul li.active {
+	background-color: red;
+}
+</pre>
+		<pre>
+/* stylesheet-2.css */
+
+ul li {
+	display: inline-block;
+	list-style: none;
+	padding: 10px;
+}
+
+ul li.active a {
+	color: green;
+
+}
+
+ul li a {
+	text-decoration: none;
+	color: red;
+}
+
+ul li.active {
+	background-color: transparent;
+}
+
+		</pre>
+	</section >
+
+
+    </div>
+
+<div class="col-md-7 col-sm-7" id='what'>
+      <h3>หลักการทำงาน</h3>
+
+<p>เมื่อมีการ link เข้ากับ stylesheet หลายอัน จะทำการนำผลที่เกิดล่าสุดมาแสดงผล.</p>
+<p> code ใน css style 1 และ style 2</p>
+
+	
+
+	<p> - เมื่อมีการ link เข้ากับ stylesheet หลายอัน ตามลำดับดังภาพ</p>
+		<img src = "p1.jpg"> 
+		<p>  </p>
+		<p>  </p>
+		<div id ='line'>
+		<p> จะได้ผลปรากฎว่า </p>
+	      	<nav>
+		<ul>
+			<li>
+				<a href="index.html">TEST1</a>
+			</li>
+			<li class="active">
+				<a href="index.html">TEST2</a>
+			</li>
+		</ul>
+	</nav>
+	<p> จะเห็นได้ว่า stylesheet ที่ 1 มี สีพื้นหลัง TEST 1 ตัวอักษรสี แดง TEST 2 ตัวอักษรสีเขียว  </p>
+</div>
+<div id ='line'>
+			<p>  </p>
+		<p> แต่การทำงานจริงๆของมันคือ ทำ style 1 ก่อน ได้เป็น </p>
+
+	      	<nav>
+		<ul id = 's'>
+			<li style = "	
+			display: inline-block;
+	list-style: none;
+	padding: 10px;">
+				<a href="index.html" style="	text-decoration: none;
+	color: red;">TEST1</a>
+			</li>
+			<li class="active" style="background-color: red;">
+				<a href="index.html">TEST2</a>
+			</li>
+		</ul>
+
+
+			      	<nav>
+
+			      		</div>
+
+
+			      				<p> แล้วจึงค่อยทำ stylesheet ที่ 2 ทับ  จึงได้หน้าตาแบบนี้</p>
+		<ul>
+			<li>
+				<a href="index.html">TEST1</a>
+			</li>
+			<li class="active">
+				<a href="index.html">TEST2</a>
+			</li>
+		</ul>
+	</nav>
+</div>
+</div>
+
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0" id = 'footer'>
+  <h1>Made by</h1>
+  <p>Mr.Supaphol  Suvitayavut</p>
+</div>
+
+
+
+
+</body>
+</html>
